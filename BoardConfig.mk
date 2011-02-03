@@ -39,6 +39,7 @@ TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/charm/recovery_kernel
 TARGET_PREBUILT_KERNEL := device/motorola/charm/kernel
 BOARD_HAS_SMALL_RECOVERY := true
 OMX_TI_OMAP_TIER_LEVEL := 10
+#mtd partitions on MB502
 # #dev:    size   erasesize  name
 # #mtd0: 00180000 00020000 "pds"
 # #mtd1: 00060000 00020000 "cid"
