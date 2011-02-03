@@ -19,28 +19,30 @@
 # not specialized for any geography.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
-    device/motorola/sholes/init.sholes.rc:root/init.sholes.rc
+    device/motorola/charm/init.charm.rc:root/init.charm.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
-$(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/charm/charm-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.android.wifi-watchlist=GoogleGuest \
 	ro.error.receiver.system.apps=com.google.android.feedback \
 	ro.setupwizard.enterprise_mode=1 \
-	ro.com.google.clientidbase=android-verizon \
+	ro.com.google.clientidbase=android-tmo \
 	ro.com.google.locationfeatures=1 \
 	ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
 	ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
 	ro.cdma.home.operator.numeric=310004 \
-	ro.cdma.home.operator.alpha=Verizon \
+	ro.cdma.home.operator.alpha=T-Mobile \
 	ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
 	ro.cdma.data_retry_config=default_randomization=2000,0,0,120000,180000,540000,960000 \
 	ro.config.vc_call_vol_steps=7 \
@@ -53,7 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.lockprof.threshold=500 \
 	dalvik.vm.dexopt-flags=m=y
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/sholes/overlay
+DEVICE_PACKAGE_OVERLAYS += device/motorola/charm/overlay
 
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -63,37 +65,14 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
-    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/motorola/sholes/media_profiles.xml:system/etc/media_profiles.xml
+    device/motorola/charm/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
-    librs_jni \
-    tiwlan.ini \
-    dspexec \
-    libbridge \
-    overlay.omap3 \
-    wlan_cu \
-    libtiOsLib \
-    wlan_loader \
-    libCustomWifi \
-    wpa_supplicant.conf \
-    dhcpcd.conf \
-    libOMX.TI.AAC.encode \
-    libOMX.TI.AMR.encode \
-    libOMX.TI.WBAMR.encode \
-    libOMX.TI.JPEG.Encoder \
-    libLCML \
-    libOMX_Core \
-    libOMX.TI.Video.Decoder \
-    libOMX.TI.Video.encoder \
-    libVendor_ti_omx \
-    gps.sholes \
-    sensors.sholes \
-    lights.sholes
+    librs_jni
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -102,15 +81,15 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES += hdpi
 
 PRODUCT_COPY_FILES += \
-    device/motorola/sholes/vold.fstab:system/etc/vold.fstab\
-    device/motorola/sholes/apns-conf.xml:system/etc/apns-conf.xml
+    device/motorola/charm/vold.fstab:system/etc/vold.fstab\
+    device/motorola/charm/apns-conf.xml:system/etc/apns-conf.xml
 
 
 PRODUCT_COPY_FILES += \
-    device/motorola/sholes/tiwlan_drv.ko:system/lib/modules/tiwlan_drv.ko
+    device/motorola/charm/tiwlan_drv.ko:system/lib/modules/tiwlan_drv.ko
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/motorola/sholes/kernel
+LOCAL_KERNEL := device/motorola/charm/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -118,7 +97,7 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-$(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/charm/charm-vendor.mk)
 
 # media profiles and capabilities spec
 # $(call inherit-product, device/motorola/sholes/media_a1026.mk)
@@ -126,8 +105,8 @@ $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 # stuff common to all HTC phones
 #$(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full_base.mk)
+$(call inherit-product, build/target/product/full.mk)
 
 
-PRODUCT_NAME := generic_sholes
-PRODUCT_DEVICE := sholes
+PRODUCT_NAME := generic_charm
+PRODUCT_DEVICE := charm
