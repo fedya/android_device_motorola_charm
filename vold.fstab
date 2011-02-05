@@ -1,18 +1,9 @@
-## Vold 2.0 fstab for Motorola Sholes
-#
-## - San Mehat (san@android.com)
-## 
+## vold configuration file for sholes
 
-#######################
-## Regular device mount
-##
-## Format: dev_mount <label> <mount_point> <part> <sysfs_path1...> 
-## label        - Label for the volume
-## mount_point  - Where the volume will be mounted
-## part         - Partition # (1 based), or 'auto' for first usable partition.
-## <sysfs_path> - List of sysfs paths to source devices
-######################
-
-# Mounts the first usable partition of the specified device
-dev_mount sdcard /mnt/sdcard auto /devices/platform/goldfish_mmc.0 /devices/platform/mmci-omap-hs.0/mmc_host/mmc0
-
+volume_sdcard {
+    emu_media_path /devices/platform/goldfish_mmc.0/mmc_host/mmc0
+    media_path      /devices/platform/mmci-omap-hs.0/mmc_host/mmc0
+    media_type      mmc
+    mount_point     /sdcard
+    ums_path       /devices/platform/usb_mass_storage/lun0
+}
