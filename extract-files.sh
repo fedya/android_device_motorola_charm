@@ -66,6 +66,8 @@ adb pull /system/etc/gpsconfig.xml ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/motorola/12m/key_code_map.txt ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/pvplayer_mot.cfg ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/wifi/fw_wlan1271.bin ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/etc/fmc_init_6450.2.bts ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/etc/fm_rx_init_1273.2.bts ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/dsp/baseimage.dof ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/dsp/conversions.dll64P ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/dsp/h264vdec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
@@ -174,6 +176,8 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/key_code_map.txt:/system/etc/motorola/12m/key_code_map.txt \\
     vendor/motorola/__DEVICE__/proprietary/pvplayer_mot.cfg:/system/etc/pvplayer_mot.cfg \\
     vendor/motorola/__DEVICE__/proprietary/fw_wlan1271.bin:/system/etc/wifi/fw_wlan1271.bin \\
+    vendor/motorola/__DEVICE__/proprietary/fmc_init_6450.2.bts:/system/etc/fmc_init_6450.2.bts \\
+    vendor/motorola/__DEVICE__/proprietary/fm_rx_init_1273.2.bts:/system/etc/fm_rx_init_1273.2.bts \\
     vendor/motorola/__DEVICE__/proprietary/baseimage.dof:/system/lib/dsp/baseimage.dof \\
     vendor/motorola/__DEVICE__/proprietary/conversions.dll64P:/system/lib/dsp/conversions.dll64P \\
     vendor/motorola/__DEVICE__/proprietary/h264vdec_sn.dll64P:/system/lib/dsp/h264vdec_sn.dll64P \\
