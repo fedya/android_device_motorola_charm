@@ -67,10 +67,6 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
 
-# media config xml file
-PRODUCT_COPY_FILES += \
-    device/motorola/charm/media_profiles.xml:system/etc/media_profiles.xml
-
 PRODUCT_PACKAGES += \
     librs_jni
 
@@ -81,7 +77,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES += hdpi
 
 PRODUCT_COPY_FILES += \
-    device/motorola/charm/vold.fstab:system/etc/vold.fstab\
+    device/motorola/charm/vold.fstab:system/etc/vold.conf\
     device/motorola/charm/apns-conf.xml:system/etc/apns-conf.xml
 
 
