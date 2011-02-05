@@ -27,7 +27,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
-    device/motorola/charm/init.charm.rc:root/init.charm.rc
+    device/motorola/charm/init.mapphone30_umts.rc:root/init.mapphone30_umts.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/charm/charm-vendor.mk)
