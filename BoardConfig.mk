@@ -1,7 +1,33 @@
-USE_CAMERA_STUB := true
+# Copyright (C) 2009 The Android Open Source Project
+# #
+# # Licensed under the Apache License, Version 2.0 (the "License");
+# # you may not use this file except in compliance with the License.
+# # You may obtain a copy of the License at
+# #
+# #      http://www.apache.org/licenses/LICENSE-2.0
+# #
+# # Unless required by applicable law or agreed to in writing, software
+# # distributed under the License is distributed on an "AS IS" BASIS,
+# # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# # See the License for the specific language governing permissions and
+# # limitations under the License.
+#
+# #
+# # This file sets variables that control the way modules are built
+# # thorughout the system. It should not be used to conditionally
+# # disable makefiles (the proper mechanism to control what gets
+# # included in a build is to use PRODUCT_PACKAGES in a product
+# # definition file).
+# #
+#
+# # WARNING: This line must come *before* including the proprietary
+# # variant, so that it gets overwritten by the parent (which goes
+# # against the traditional rules of inheritance).
+USE_CAMERA_STUB := false
+BOARD_USE_FROYO_LIBCAMERA := true
+BOARD_USE_YUV422I_DEFAULT_COLORFORMAT := true
 # inherit from the proprietary version
 -include vendor/motorola/charm/BoardConfigVendor.mk
-BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/motorola/charm/recovery/recovery_ui.c
 TARGET_NO_BOOTLOADER := true
 
 TARGET_BOARD_PLATFORM := omap3
@@ -11,7 +37,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8
 
-TARGET_BOOTLOADER_BOARD_NAME := basil
+TARGET_BOOTLOADER_BOARD_NAME := charm
 
 BOARD_KERNEL_CMDLINE := console=ttyS2,115200n8 rw init=/init ip=off motobldlabel=none mtdparts=omap2-nand.0:128k(mbmloader),640k(mbm),640k(mbmbackup),384k(bploader),384k(cdt),1536k(pds),384k(lbl),384k(lbl_backup),384k(cid),1536k(sp),384k(devtree),640k(logo),384k(misc),3584k(boot),3840k(bpsw),4608k(recovery),9088k(cdrom),384k(unused0),182656k(system),384k(unused1),133760k(cache),175232k(userdata),384k(unused2),2m(kpanic),512k(rsv)
 
