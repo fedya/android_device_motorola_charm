@@ -125,7 +125,7 @@ PRODUCT_COPY_FILES := \\
     vendor/motorola/__DEVICE__/proprietary/lights.basil.so:obj/lib/hw/lights.basil.so \\
     vendor/motorola/__DEVICE__/proprietary/sensors.basil.so:obj/lib/hw/sensors.basil.so
 
-# All the blobs necessary for passion
+# All the blobs necessary for motorola charm MB502
 PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/libgps.so:/system/lib/libgps.so \\
     vendor/motorola/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
