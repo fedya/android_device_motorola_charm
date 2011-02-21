@@ -82,7 +82,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES += mdpi
 
 PRODUCT_COPY_FILES += \
-    device/motorola/charm/vold.fstab:system/etc/vold.conf\
+    device/motorola/charm/vold.conf:system/etc/vold.conf\
     device/motorola/charm/apns-conf.xml:system/etc/apns-conf.xml
 
 
