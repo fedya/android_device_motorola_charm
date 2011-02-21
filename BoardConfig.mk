@@ -64,12 +64,22 @@ WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
 WIFI_FIRMWARE_LOADER        := "wlan_loader"
 
 
+BOARD_USES_GENERIC_AUDIO := true
+
 BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+
+BOARD_GPS_LIBRARIES := libgps
+
 BOARD_EGL_CFG := device/motorola/charm/egl.cfg
+
 TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/charm/recovery_kernel
 TARGET_PREBUILT_KERNEL := device/motorola/charm/kernel
+
 BOARD_HAS_SMALL_RECOVERY := true
 OMX_TI_OMAP_TIER_LEVEL := 10
+HARDWARE_OMX := true
+
 # #dev:    size   erasesize  name
 # #mtd0: 00180000 00020000 "pds"
 # #mtd1: 00060000 00020000 "cid"
