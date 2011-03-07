@@ -78,7 +78,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Passion uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
+PRODUCT_LOCALES += mdpi
 
 PRODUCT_COPY_FILES += \
     device/motorola/charm/vold.fstab:system/etc/vold.fstab\
