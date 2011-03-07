@@ -1,0 +1,17 @@
+ToDo List:
+
+1.adb during boot enabler for motorola charm
+Need test it with my mod recovery
+http://cyanogenmod4milestone.googlecode.com/files/update-adb_during_boot_enabler.zip
+
+2.Fix Bootstrap Clockwork Recovery for motorola charm.
+Now i need fix flash_image and nandbackup
+partially working but need some magic passes for normal working
+
+3.Try to flash
+
+out/target/product/charm/update-cm-6.2.0-RC0-Charm-signed.zip
+
+4.Think abaout how build bacon
+with precompiled boot.img
+May be cyanogenmod4milestone can help this.
