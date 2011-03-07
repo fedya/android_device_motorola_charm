@@ -19,7 +19,6 @@ DEVICE=charm
 mkdir -p ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libgps.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libaudio.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/libaudiopolicy.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libril.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/egl/libEGL_POWERVR_SGX530_121.so ../../../vendor/motorola/$DEVICE/proprietary
@@ -119,7 +118,6 @@ PRODUCT_COPY_FILES := \\
     vendor/motorola/__DEVICE__/proprietary/libgps.so:obj/lib/libgps.so \\
     vendor/motorola/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
     vendor/motorola/__DEVICE__/proprietary/libaudio.so:obj/lib/libaudio.so \\
-    vendor/motorola/__DEVICE__/proprietary/libaudiopolicy.so:obj/lib/libaudiopolicy.so \\
     vendor/motorola/__DEVICE__/proprietary/libril.so:obj/lib/libril.so \\
     vendor/motorola/__DEVICE__/proprietary/gralloc.omap3.so:obj/lib/hw/gralloc.omap3.so \\
     vendor/motorola/__DEVICE__/proprietary/lights.basil.so:obj/lib/hw/lights.basil.so \\
@@ -130,7 +128,6 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/libgps.so:/system/lib/libgps.so \\
     vendor/motorola/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
     vendor/motorola/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
-    vendor/motorola/__DEVICE__/proprietary/libaudiopolicy.so:/system/lib/libaudiopolicy.so \\
     vendor/motorola/__DEVICE__/proprietary/libril.so:/system/lib/libril.so \\
     vendor/motorola/__DEVICE__/proprietary/libEGL_POWERVR_SGX530_121.so:/system/lib/egl/libEGL_POWERVR_SGX530_121.so \\
     vendor/motorola/__DEVICE__/proprietary/libGLESv1_CM_POWERVR_SGX530_121.so:/system/lib/egl/libGLESv1_CM_POWERVR_SGX530_121.so \\
