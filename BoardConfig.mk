@@ -70,6 +70,7 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 BOARD_GPS_LIBRARIES := libgps
+BOARD_USES_GPSSHIM := true
 
 BOARD_EGL_CFG := device/motorola/charm/egl.cfg
 
