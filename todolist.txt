@@ -15,3 +15,5 @@ out/target/product/charm/update-cm-6.2.0-RC0-Charm-signed.zip
 4.Think abaout how build bacon
 with precompiled boot.img
 May be cyanogenmod4milestone can help this.
+
+5.open project on github with modkernel charm 2.6.29 fork from upstream
