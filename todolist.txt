@@ -17,3 +17,8 @@ with precompiled boot.img
 May be cyanogenmod4milestone can help this.
 
 5.open project on github with modkernel charm 2.6.29 fork from upstream
+
+6.build su without connect to androot
+because i have segfault
+
+7.build NOT-cyan busybox
