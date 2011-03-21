@@ -1,8 +1,8 @@
 USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/motorola/charm/BoardConfigVendor.mk
-TARGET_NO_BOOTLOADER := true
 
+TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := omap3
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -24,21 +24,35 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0b260000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0ab20000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+OMX_TI_OMAP_TIER_LEVEL := 10
+# Wifi related defines
+#BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
+#BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libCustomWifi
+#WPA_SUPPLICANT_VERSION      := VER_0_6_X
+#BOARD_WLAN_DEVICE           := wl1271
+#WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/tiwlan_drv.ko"
+#BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/wilink_6_1
+#WIFI_DRIVER_MODULE_ARG      := ""
+#WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
+#WIFI_FIRMWARE_LOADER        := "wlan_loader"
 
-BOARD_WLAN_DEVICE           := tiwlan0
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/tiwlan_drv.ko"
-WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
-WIFI_FIRMWARE_LOADER        := "wlan_loader"
-WPA_SUPPLICANT_VERSION      := VER_0_6_X
-BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libCustomWifi
+BOARD_USES_GENERIC_AUDIO := true
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_EGL_CFG := device/motorola/charm/egl.cfg
 TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/charm/recovery_kernel
 TARGET_PREBUILT_KERNEL := device/motorola/charm/kernel
 BOARD_HAS_SMALL_RECOVERY := true
-OMX_TI_OMAP_TIER_LEVEL := 10
+BOARD_LDPI_RECOVERY := true
+
+BOARD_RECOVERY_IGNORE_BOOTABLES := true
+BOARD_DATA_DEVICE := /dev/block/mtdblock9
+BOARD_DATA_FILESYSTEM := auto
+BOARD_SYSTEM_DEVICE := /dev/block/mtdblock7
+BOARD_SYSTEM_FILESYSTEM := auto
+BOARD_CACHE_DEVICE := /dev/block/mtdblock8
+BOARD_CACHE_FILESYSTEM := auto
+
 #mtd partitions on MB502
 # #dev:    size   erasesize  name
 # #mtd0: 00180000 00020000 "pds"
