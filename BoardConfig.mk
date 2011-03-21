@@ -77,7 +77,7 @@ BOARD_EGL_CFG := device/motorola/charm/egl.cfg
 TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/charm/recovery_kernel
 TARGET_PREBUILT_KERNEL := device/motorola/charm/kernel
 
-BOARD_HAS_SMALL_RECOVERY := true
+#BOARD_HAS_SMALL_RECOVERY := true
 BOARD_LDPI_RECOVERY := true
 OMX_TI_OMAP_TIER_LEVEL := 10
 HARDWARE_OMX := true
