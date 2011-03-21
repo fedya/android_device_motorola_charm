@@ -27,7 +27,9 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
-    device/motorola/charm/init.charm.rc:root/init.charm.rc
+    device/motorola/charm/init.mapphone30_umts.rc:root/init.mapphone30_umts.rc \
+    device/motorola/charm/init.mapphone_cdma.rc:root/init.mapphone_cdma.rc \
+    device/motorola/charm/init.mapphone_umts.rc:root/init.mapphone_umts.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/charm/charm-vendor.mk)
@@ -78,10 +80,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Passion uses high-density artwork where available
-PRODUCT_LOCALES += mdpi
+PRODUCT_LOCALES += ldpi
 
 PRODUCT_COPY_FILES += \
-    device/motorola/charm/vold.fstab:system/etc/vold.fstab\
+    device/motorola/charm/vold.conf:system/etc/vold.conf\
     device/motorola/charm/apns-conf.xml:system/etc/apns-conf.xml
 
 
