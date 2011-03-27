@@ -27,12 +27,12 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
-    device/motorola/charm/init.mapphone30_umts.rc:root/init.mapphone30_umts.rc \
-    device/motorola/charm/init.mapphone_cdma.rc:root/init.mapphone_cdma.rc \
-    device/motorola/charm/init.mapphone_umts.rc:root/init.mapphone_umts.rc
+    device/motorola/basil/init.mapphone30_umts.rc:root/init.mapphone30_umts.rc \
+    device/motorola/basil/init.mapphone_cdma.rc:root/init.mapphone_cdma.rc \
+    device/motorola/basil/init.mapphone_umts.rc:root/init.mapphone_umts.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
-$(call inherit-product-if-exists, vendor/motorola/charm/charm-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/basil/basil-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -57,7 +57,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.lockprof.threshold=500 \
 	dalvik.vm.dexopt-flags=m=y
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/charm/overlay
+DEVICE_PACKAGE_OVERLAYS += device/motorola/basil/overlay
 
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -71,7 +71,7 @@ PRODUCT_COPY_FILES += \
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/motorola/charm/media_profiles.xml:system/etc/media_profiles.xml
+    device/motorola/basil/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
     librs_jni
@@ -83,15 +83,15 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES += ldpi
 
 PRODUCT_COPY_FILES += \
-    device/motorola/charm/vold.conf:system/etc/vold.conf\
-    device/motorola/charm/apns-conf.xml:system/etc/apns-conf.xml
+    device/motorola/basil/vold.conf:system/etc/vold.conf\
+    device/motorola/basil/apns-conf.xml:system/etc/apns-conf.xml
 
 
 PRODUCT_COPY_FILES += \
-    device/motorola/charm/tiwlan_drv.ko:system/lib/modules/tiwlan_drv.ko
+    device/motorola/basil/tiwlan_drv.ko:system/lib/modules/tiwlan_drv.ko
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/motorola/charm/kernel
+LOCAL_KERNEL := device/motorola/basil/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -99,7 +99,7 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-$(call inherit-product-if-exists, vendor/motorola/charm/charm-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/basil/basil-vendor.mk)
 
 # media profiles and capabilities spec
 # $(call inherit-product, device/motorola/sholes/media_a1026.mk)
@@ -110,5 +110,5 @@ $(call inherit-product-if-exists, vendor/motorola/charm/charm-vendor.mk)
 $(call inherit-product, build/target/product/full.mk)
 
 
-PRODUCT_NAME := generic_charm
-PRODUCT_DEVICE := charm
+PRODUCT_NAME := generic_basil
+PRODUCT_DEVICE := basil

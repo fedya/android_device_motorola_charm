@@ -1,6 +1,6 @@
 USE_CAMERA_STUB := true
 # inherit from the proprietary version
--include vendor/motorola/charm/BoardConfigVendor.mk
+-include vendor/motorola/basil/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := omap3
@@ -26,22 +26,22 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 OMX_TI_OMAP_TIER_LEVEL := 10
 # Wifi related defines
-#BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
-#BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libCustomWifi
-#WPA_SUPPLICANT_VERSION      := VER_0_6_X
-#BOARD_WLAN_DEVICE           := wl1271
-#WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/tiwlan_drv.ko"
-#BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/wilink_6_1
-#WIFI_DRIVER_MODULE_ARG      := ""
-#WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
-#WIFI_FIRMWARE_LOADER        := "wlan_loader"
+BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libCustomWifi
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
+BOARD_WLAN_DEVICE           := tiwlan0
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/tiwlan_drv.ko"
+BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/wilink_6_1
+WIFI_DRIVER_MODULE_ARG      := ""
+WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
+WIFI_FIRMWARE_LOADER        := "wlan_loader"
 
 BOARD_USES_GENERIC_AUDIO := true
 
 BOARD_HAVE_BLUETOOTH := true
-BOARD_EGL_CFG := device/motorola/charm/egl.cfg
-TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/charm/recovery_kernel
-TARGET_PREBUILT_KERNEL := device/motorola/charm/kernel
+BOARD_EGL_CFG := device/motorola/basil/egl.cfg
+TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/basil/recovery_kernel
+TARGET_PREBUILT_KERNEL := device/motorola/basil/kernel
 BOARD_HAS_SMALL_RECOVERY := true
 BOARD_LDPI_RECOVERY := true
 
